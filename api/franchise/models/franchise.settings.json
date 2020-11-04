@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "franchises",
+  "info": {
+    "name": "Franchise",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "unique": true,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "picture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "training_venues": {
+      "collection": "training-venues",
+      "via": "franchise"
+    },
+    "trainers": {
+      "collection": "trainer",
+      "via": "franchises",
+      "dominant": true
+    }
+  }
+}

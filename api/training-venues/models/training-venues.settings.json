@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "training_venues",
+  "info": {
+    "name": "Training Venue",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "picture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "OUTPOST",
+        "VAN"
+      ]
+    },
+    "franchise": {
+      "via": "training_venues",
+      "model": "franchise"
+    }
+  }
+}

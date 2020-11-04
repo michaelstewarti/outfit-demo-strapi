@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/training-venues",
+      "handler": "training-venues.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/training-venues/count",
+      "handler": "training-venues.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/training-venues/:id",
+      "handler": "training-venues.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/training-venues",
+      "handler": "training-venues.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/training-venues/:id",
+      "handler": "training-venues.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/training-venues/:id",
+      "handler": "training-venues.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
